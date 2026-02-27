@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R$Y的专属回忆</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Simsun", "宋体", sans-serif;
+      background: url(img/0.jpg) center;
+      background-attachment: fixed;
+      color: #333;
+      padding: 20px 0;
+    }
+
+    .content {
+      position: relative;
+      width: 300px;
+      min-height: 280px;
+    }
+
+    .art {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0%;
+      left: 15%;
+    }
+
+    .audio {
+      width: 200px;
+      height: 40px;
+      position: absolute;
+      top: 75%;
+      left: 0%;
+    }
+
+    .love-list {
+      border-collapse: collapse;
+      background: #FF999980;
+      width: 90%;
+      max-width: 1200px;
+      height: 50px;
+      margin: 20px auto;
+      border: 2px solid #ff6666;
+    }
+
+    .love-list th,
+    .love-list td {
+      border: 1px solid #ff6666;
+      text-align: center;
+      padding: 8px;
+    }
+
+    .img-F {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .img-F img {
+      width: 90%;
+      max-width: 400px;
+      height: auto;
+      border: 2px solid #ffffff;
+      margin: 10px;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .img-F img.loaded {
+      opacity: 1;
+    }
+
+    .img-F cite,
+    .img-F p {
+      margin: 10px 0;
+      color: #111;
+    }
+
+    .txat {
+      width: 209px;
+      height: 170px;
+      margin: 0 auto;
+    }
+
+    .end {
+      width: 200px;
+      height: 24px;
+      margin: 0 auto;
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="color:#4ea9fe;">
+    <font face="SimSun">
+      <center><big>欢迎浏览我们的故事</big></center>
+    </font>
+  </h1>
+  <div class="content">
+    <div class="art">
+      <img src="img/3.jpg" alt="" width="200" height="200" />
+    </div>
+
+    <div class="audio">
+      <audio width="200" height="40" src="audio/徐秉龙、沈以诚 - 白羊.mp3" controls autoplay loop></audio>
+    </div>
+  </div>
+  <hr>
+
+  <table class="love-list">
+    <tr>
+      <th>我们开始的日期</th>
+      <th>我们相爱的时间</th>
+    </tr>
+    <tr>
+      <td><time datetime="2023-09-16">2023年9月16日</time></td>
+      <td id="loveDays"></td>
+    </tr>
+  </table>
+
+  <hr>
+  <div class="img-F">
+    <img src="img/1.jpg" alt="豪门千金大小姐beauty photo" loading="lazy" onload="this.classList.add('loaded')" title="重生之千金小姐">
+    <img src="img/1.jpg" alt="豪门千金大小姐beauty photo" loading="lazy"
+      onload="setTimeout(()=>{this.classList.add('loaded')},500)">
+    <p>
+      <cite>优美的图片</cite>
+    </p>
+    <p>
+      往往产生于人类的奇思妙想
+    </p>
+  </div>
+
+  <hr>
+  <marquee>
+    <h2 style="color:#111111">
+      <font face="SimSun">欢迎光顾R和Y的网页</font>
+    </h2>
+  </marquee>
+  <hr>
+  加载进度：
+  <progress value="25" max="100">
+  </progress>
+
+  <div class="img-F">
+    <img src="img/4.jpg" alt="蝴蝶结下的豪门千金" loading="lazy" onload="this.classList.add('loaded')">
+    <img src="img/4.jpg" alt="蝴蝶结下的豪门千金" loading="lazy" onload="setTimeout(()=>{this.classList.add('loaded')},500)">
+  </div>
+
+  <hr>
+  加载进度：
+  <progress value="50" max="100">
+  </progress>
+
+  <div class="img-F">
+    <img src="img/5.jpg" alt="千金大小姐之自拍" loading="lazy" onload="this.classList.add('loaded')">
+    <img src="img/5.jpg" alt="千金大小姐之自拍" loading="lazy" onload="setTimeout(()=>{this.classList.add('loaded')},500)">
+  </div>
+
+  <hr>
+  加载进度：
+  <progress value="75" max="100">
+  </progress>
+
+  <div class="img-F">
+    <img src="img/6.jpg" alt="‘赛里木湖’之旅" loading="lazy" onload="this.classList.add('loaded')">
+    <img src="img/6.jpg" alt="‘赛里木湖’之旅" loading="lazy" onload="setTimeout(()=>{this.classList.add('loaded')},500)">
+  </div>
+
+  <hr>
+  <div class="txat">
+    <textarea rows="10" cols="28">
+    “我口袋只剩玫瑰一片，此行又山高路远”
+                                  -薛之谦《小尖尖》    
+    </textarea>
+  </div>
+  加载进度：
+  <progress value="100" max="100">
+  </progress>
+  <hr>
+  <div class="end" style="text-align: center;">
+    <p style="color:#FF9999;">饶家恺 ❤️ 钱薛滢</p>
+  </div>
+
+  <script>
+    const startDate = new Date("2023-09-16T00:00:00");
+
+    if (isNaN(startDate.getTime())) {
+      document.getElementById("loveDays").innerText = "日期格式错误";
+    } else {
+      function calculateLoveDuration() {
+        const now = new Date();
+
+        const timeDiff = now - startDate;
+        const totalDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+
+        if (days < 0) {
+          months--;
+          const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+          days += lastMonth.getDate();
+        }
+
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        const formatNum = (num) => num.toString().padStart(2, '0');
+
+        const displayText = `${formatNum(years)} 年 ${formatNum(months)} 月 ${formatNum(days)} 天 总计 ${totalDays} 天`;
+
+        document.getElementById("loveDays").innerText = displayText;
+      }
+
+      calculateLoveDuration();
+      setInterval(calculateLoveDuration, 1000);
+    }
+  </script>
+</body>
+
+</html>
